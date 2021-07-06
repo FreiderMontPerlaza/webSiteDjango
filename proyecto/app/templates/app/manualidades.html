@@ -1,0 +1,71 @@
+
+{% extends 'app/base.html' %}
+
+<!--importr la funcion para leer los archivos stattico en cada pagina-->
+{% load static %}
+
+{% block contenido %}
+
+<br />
+<br />
+
+<div class="container">
+  <h3>¿Te faltan ideas creativas? Nosotros te ayudamos con algunas:</h3>
+  <br />
+  <div class="row">
+    <div class="col-sm-4 col-log-2 borde">
+      <div><span>Aprende a hacer origami</span></div>
+      <a class="nav-link" href="#">
+        <img class="w-100" src="{% static 'app/images/origami.jpg' %}"
+      /></a>
+    </div>
+    <br />
+    <div class="col-sm-4 col-log-2 borde">
+      <div><span>Aprende alfarería</span></div>
+      <a class="nav-link" href="#">
+        <img class="w-100" src="{% static 'app/images/orfebreria.jpg'%}"
+      /></a>
+    </div>
+    <br />
+    <div class="col-sm-4 col-log-2 borde">
+      <div>
+        <span>Aprende orfebrería</span>
+      </div>
+      <a class="nav-link" href="#">
+        <img class="w-100" src="{% static 'app/images/imagen44.jpg' %}"
+      /></a>
+    </div>
+    <br />
+    <div class="col-sm-4 col-log-2 borde">
+      <div><span>Aprende a esculpir</span></div>
+      <a class="nav-link" href="#">
+        <img class="w-100" src="{% static 'app/images/esculpir.jpg'%}"
+      /></a>
+    </div>
+    <div class="col-sm-4 col-log-2 borde">
+      <div><span>Aprende xilografía</span></div>
+      <a class="nav-link" href="#">
+        <img class="w-100" src="{% static 'app/images/grabado.jpg'%}"
+      /></a>
+    </div>
+    <div class="col-sm-4 col-log-2 borde">
+      <div><span>Aprende a dibujar</span></div>
+      <a class="nav-link" href="#">
+        <img class="w-100" src="{% static 'app/images/dibujo.jpg'%}"
+      /></a>
+    </div>
+  </div>
+</div>
+</body>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
