@@ -1,4 +1,7 @@
+from django.contrib import admin
 from django.db import models
+from django.db.models.query_utils import RegisterLookupMixin
+from django.shortcuts import render
 
 # Create your models here.
 class Marca(models.Model):
@@ -14,4 +17,26 @@ class Producto(models.Model):
     imagen = models.ImageField(upload_to = "producto",null = True)
 
     def __str__(self):
-        return self.nombre
+        return self.nombre 
+
+
+
+
+opciciones_consulta = [
+    [0,"consulta"],
+    [1,"reclamo"],
+    [2,"sugerencia"],
+    [3,"felicitaciones"]
+]
+
+#modelo contacto
+class Contactos(models.Model):
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField()
+    tipo_consulta = models.IntegerField(choices=opciciones_consulta)
+    mensaje = models.TextField()
+    avisos = models.BooleanField()
+
+    def __str__(self):
+        return  self.nombre
+

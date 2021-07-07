@@ -1,0 +1,1 @@
+from proyecto.app.views import contacto

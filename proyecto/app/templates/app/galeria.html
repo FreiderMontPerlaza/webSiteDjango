@@ -1,12 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2> pagina   galeria</h2>
-</body>
-</html>
+{% extends 'app/base.html' %}
+
+<!--importr la funcion para leer los archivos stattico en cada pagina-->
+{% load static %}
+
+{% block contenido %}
+
+            <!--Menu navegacion-->
+            <nav
+              class="container navbar navbar-expand-md navbar-dark bg-dark fixed-top"
+            >
+              <div class="container">
+                <a class="navbar-brand" href="index.html"
+                  ><span class="nombre-company"
+                    ><span class="letter-g">G</span>rupo</span
+                  >&nbsp;Cero</a
+                >
+        
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarsExampleDefault"
+                  aria-controls="navbarsExampleDefault"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mr-4">
+                      <a class="nav-link" href="index.html">Inicio </a>
+                    </li>
+                    <li class="nav-item mr-4">
+                      <a class="nav-link" href="manualidades.html">Manualidades</a>
+                    </li>
+                    <li class="nav-item mr-4">
+                      <a class="nav-link" href="esculturas.html">Esculturas</a>
+                    </li>
+                    <li class="nav-item mr-4">
+                      <a class="nav-link" href="pinturas.html">Pinturas</a>
+                    </li>
+                    <li class="nav-item mr-4">
+                      <a class="nav-link" href="artistas.html">Artistas</a>
+                    </li>
+                    <li class="nav-item mr-4">
+                      <a class="nav-link" href="nosotros.html">Compañía</a>
+                    </li>
+                    <li class="nav-item mr-4">
+                      <a class="nav-link" href="sesion.html">Inicia Sesión</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <br />
+            <br />
+            <br />
+            <br />
+        
+            <div class="container">
+              <h3>Tenemos pinturas alucinantes:</h3>
+              <br />
+              <div class="row">
+                <div class="col-sm-4 col-log-2 borde">
+                  <div><span>Vacío por Manuel Piña</span></div>
+                  <a class="nav-link" href="{% static 'app/images/pintura21.jpg' %}">
+                    <img class="w-100" src="img/pintura21.jpg"
+                  /></a>
+                </div>
+                <br />
+                <div class="col-sm-4 col-log-2 borde">
+                  <div><span>Contemporáneo por Manuel Piña</span></div>
+                  <a class="nav-link" href="artista2.html">
+                    <img class="w-100" src="img/pintura22.jfif"
+                  /></a>
+                </div>
+                <br />
+                <div class="col-sm-4 col-log-2 borde">
+                  <div>
+                    <span>Lleno por Manuel Piña</span>
+                  </div>
+                  <a class="nav-link" href="artista2.html">
+                    <img class="w-100" src="img/pintura23.jpg"
+                  /></a>
+                </div>
+                <br />
+                <div class="col-sm-4 col-log-2 borde">
+                  <div><span>Soul Soul por Kumerazaki Ozuki</span></div>
+                  <a class="nav-link" href="artista3.html">
+                    <img class="w-100" src="img/abstracto31.jpg"
+                  /></a>
+                </div>
+                <div class="col-sm-4 col-log-2 borde">
+                  <div><span>le´ista por Kumerazaki Ozuki</span></div>
+                  <a class="nav-link" href="artista3.html">
+                    <img class="w-100" src="img/abstracto32.jpg"
+                  /></a>
+                </div>
+                <div class="col-sm-4 col-log-2 borde">
+                  <div><span>Incierto por Kumerazaki Ozuki</span></div>
+                  <a class="nav-link" href="artista3.html">
+                    <img class="w-100" src="img/abstracto33.jpg"
+                  /></a>
+                </div>
+              </div>
+            </div>
+        
+              
+        
+
+    {% endblock %}
