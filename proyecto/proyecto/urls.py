@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('app.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),#http://127.0.0.1:8000/accounts/login/ es la ruta  del login al que me lleva 
 
 ]
 

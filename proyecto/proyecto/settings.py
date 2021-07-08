@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
+
+LOGIN_REDIRECT_URL = '/' #me dirige al raiz de mi sitio
+LOGOUT_REDIRECT_URL = '/'
 
 # Application definition
 

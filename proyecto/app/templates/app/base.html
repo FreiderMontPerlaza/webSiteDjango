@@ -73,10 +73,21 @@
               <a class="nav-link" href="{% url 'home' %}">Compañía</a>
             </li>
             <li class="nav-item mr-4">
-              <a class="nav-link" href="{% url 'home' %}"
-                >Registrar Usuario</a> <!--nota acomodar los url como corresponde-->
+              
+              {% if user.is_authenticated %}
+              <li>
+              <a  class="btn btn-primary btn-sm" href="{%url 'logout' %}">Cerrar sesion</a>
+              </li>
+              {% else %}
+              <li>
+              <a  class="btn btn-primary btn-sm" href="{%url 'login' %}">Iniciar sesion</a>
+              </li>
+
+              {% endif %}
+             
             </li>
           </ul>
+          
         </div>
       </div>
     </nav>
@@ -192,11 +203,8 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div>
 
-  <div id="container">
-    {% block contenido %}
-    {% endblock %}
+     
 
   </div>
 
@@ -279,3 +287,10 @@
     ></script>
   </body>
 </html>
+
+
+
+      
+
+    
+  
