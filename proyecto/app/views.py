@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .forms import ContactoForm
+from .forms import ContactoForm,Contactos
 
 # Create your views here.
 def home(request):
@@ -10,7 +10,7 @@ def contacto(request):
     data = {
         'form': ContactoForm()
     }
-    return render(request,'app./contacto.html',data)
+    return render(request,'app/contacto.html',data)
 
 
 

@@ -6,5 +6,5 @@ from.models import Contactos
 class ContactoForm(forms.ModelForm):
 
     class Meta:
-        mode = Contactos
+        model = Contactos
         fields = '__all__'

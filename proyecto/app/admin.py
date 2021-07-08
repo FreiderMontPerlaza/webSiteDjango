@@ -1,6 +1,6 @@
-from proyecto.app.views import contacto
+from.views import contacto
 from django.contrib import admin
-from .models import Contactos, Marca,Producto
+from.models import Contactos,Marca,Producto
 
 # Register your models here.
 
