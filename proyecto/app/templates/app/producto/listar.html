@@ -1,0 +1,50 @@
+{% extends 'app/base.html' %}
+
+{% block contenido%}
+{% load humanize %}
+
+
+<br><br><br><br>
+<div class="card">
+    <div class="card-body">
+        <h2 class="display-4 text-center">Listado de productos</h2>
+        <hr>
+
+    </div>
+
+</div>
+<table class=" table table-striped table-hover table-resposive-sm">
+
+    <tr>
+    <th>Nombre</th>
+    <th>Precio</th>
+    <th>Marca</th>
+    <th>Disponible
+    </tr>
+
+    {%  for p in product %}
+    <tr>
+        <tr>
+            <td>{{ p.nombre | title }}</td>
+            <td>{{ p.precio | intcomma }}</td>
+            <td>{{ p.marca | title }}</td>
+        <td>
+            {% if p.disponible %}
+            Si
+            {% else %}
+            No
+            {% endif %}
+        </td>
+
+        <td>
+            <a href="{% url 'modificar_productos' p.id %}" class="btn btn-info btn-sm">Modificar</a>
+
+            <a href="{% url 'eliminar_producto' p.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+
+        </tr>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

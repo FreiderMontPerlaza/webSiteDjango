@@ -1,5 +1,5 @@
 from django import contrib
-from django.shortcuts import render
+from django.shortcuts import render,redirect,get_object_or_404
 
 from .forms import ContactoForm,productoForm,Producto
 
@@ -47,10 +47,31 @@ def agregar_producto(request):
 
 
 
-def listar_producto(request):
-    Productos = Producto.objects.all()
+def listar_productos(request):
+    product = Producto.objects.all
 
     data = {
-        'producto':Productos
+        'product':product
     }
-    return render(request,'app/producto/lista.html',data)
+    return render(request,'app/producto/listar.html',data)
+
+
+
+def modificar_producto(request,id):
+
+    prodct = get_object_or_404(Producto, id = id )
+    data = {
+        'form':productoForm(instance=prodct) 
+    }
+    if request.method == 'POST':
+        formulario = productoForm(data = request.POST, instance=prodct, files=request.FILEs)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(to="listar_productos")
+        data["form"] = formulario
+    return render(request, 'app/producto/modificar.html',data)
+
+def eliminar_producto(request,id):
+    product = get_object_or_404(Producto,id=id)
+    product.delete()
+    return redirect(to="listar_productos")
