@@ -41,7 +41,11 @@ INSTALLED_APPS = [
     'app',
     
     'colorfield',
+    'crispy_forms',
 ]
+
+#trabaja con boostrap
+CRISPY_TEMPLATES_PACK = 'Bootstrap'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
