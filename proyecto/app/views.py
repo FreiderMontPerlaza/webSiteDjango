@@ -1,6 +1,7 @@
+from django import contrib
 from django.shortcuts import render
 
-from .forms import ContactoForm,Contactos
+from .forms import ContactoForm
 
 # Create your views here.
 def home(request):
@@ -10,6 +11,13 @@ def contacto(request):
     data = {
         'form': ContactoForm()
     }
+    if request.method == 'POST':
+        formulario = ContactoForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "se ha guardado los datos correctamente"
+        else:
+            data["form"] = formulario
     return render(request,'app/contacto.html',data)
 
 

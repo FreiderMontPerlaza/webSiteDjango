@@ -9,8 +9,8 @@
 <div id="contenido">
     <h2>Contatanos</h2>
 
-    <form action="" class="formulario_contato" id="formulario_contacto" method="POST">
-         <label for="nombre">Nombre</label>
+ <form action="" class="formulario_contato" id="formulario_contacto" method="POST">
+        <!--   <label for="nombre">Nombre</label>
         <input type="text"  id="nombre" name="nombre" placeholder="nombre completo">
         <br>
         <br>
@@ -30,7 +30,7 @@
             <option value="">sujerencia</option>
             <option value="">felicitaciones</option>
         </select>
-    </form>
+  
 <br>
 <label for="mensaje">mensaje</label>
 <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
@@ -38,12 +38,18 @@
 <input type="checkbox" name="avisos" id="avisos" checked>
 <label for="avisos">¿Desea recibir promociones/avisos en su email</label>
 <br>
+<br> -->
+<br>
+{% csrf_token %}
+
+{{ form }}
+
 <br> 
-
-
-
 <button class="btn btn-primary btn-lg" type="submit">Enviar</button>
 
+</form>
+
+{{mensaje}}
 <table id="tablacontacto">
 
 </table>
